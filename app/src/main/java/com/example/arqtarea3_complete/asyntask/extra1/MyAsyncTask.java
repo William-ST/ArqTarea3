@@ -31,11 +31,6 @@ public class MyAsyncTask extends AsyncTask<Long, Double, Boolean> {
                 progreso += 5;
             }
         }
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         Log.v(TAG, "Thread " + Thread.currentThread().getId() +
                 ": Finaliza doInBackground()");

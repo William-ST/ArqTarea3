@@ -24,7 +24,7 @@ public class CompleteSaveStatusHiddenActitivty extends AppCompatActivity impleme
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_prime_number_asyntask);
         inputField = (EditText) findViewById(R.id.inputField);
         resultField = (EditText) findViewById(R.id.resultField);
         primecheckbutton = (Button) findViewById(R.id.primecheckbutton);

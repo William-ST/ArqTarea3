@@ -39,7 +39,7 @@ public class ConcurrentPrimeNumberActivity extends AppCompatActivity implements 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_extra4);
         btnCalculate = findViewById(R.id.primecheckbutton);
         rvResult = findViewById(R.id.rv_result);
         inputFieldStart = findViewById(R.id.input_field_start);
