@@ -70,6 +70,10 @@
                 android:id="@+id/exercise_24"
                 android:icon="@drawable/ic_menu_send"
                 android:title="SHA1 receptor intent" />
+            <item
+                android:id="@+id/exercise_25"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Número primo service" />
         </menu>
     </item>
 
