@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/inputField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="3093215881333057" />
+
+    <Button
+        android:id="@+id/primecheckbutton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="triggerPrimecheck"
+        android:text="¿Es primo?" />
+
+    <EditText
+        android:id="@+id/resultField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.arqtarea3_complete">
+
+    <application
+        android:name=".asyntask.extra2.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".asyntask.CancelPrimeNumberAsyntaskActivity" />
+        <activity android:name=".asyntask.CancelPrimeNumberInbackgroundAsyntaskActivity" />
+        <activity android:name=".asyntask.HandlerStatusAsyntaskActivity" />
+        <activity android:name=".asyntask.IndependentAsyntaskClassAsyntaskActivity" />
+        <activity android:name=".asyntask.LockChangeOrientationActivity" />
+        <activity android:name=".asyntask.PrimeNumberAsyntaskActivity" />
+        <activity android:name=".asyntask.SaveStatusHiddenFragmentActivity" />
+        <activity android:name=".asyntask.extra1.CompleteSaveStatusHiddenActitivty" />
+        <activity android:name=".asyntask.extra2.ProgressbarActivity" />
+        <activity android:name=".asyntask.extra4.IntervalSearchPrimeNumberActivity" />
+        <activity android:name=".asyntask.extra5.ConcurrentPrimeNumberActivity" />
+
+        <activity android:name=".servicio.exercise1.Exe1MainActivity" />
+        <activity android:name=".servicio.exercise2.Exe2MainActivity" />
+        <activity android:name=".servicio.exercise3.Exe3MainActivity" />
+        <activity android:name=".servicio.exercise4.Exe4MainActivity" />
+
+        <service
+            android:name=".servicio.exercise1.BoundService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".servicio.exercise2.MessengerService"
+            android:process=":MessagingProcess" />
+
+        <service
+            android:name=".servicio.exercise3.Sha1HashService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".servicio.exercise4.Sha1HashBroadcastService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".surfaceview.exercise1.Boucing1Activity" />
+        <activity android:name=".surfaceview.exercise2.Boucing2Activity" />
+
+    </application>
+
+</manifest>

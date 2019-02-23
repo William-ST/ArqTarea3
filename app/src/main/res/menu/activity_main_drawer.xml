@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Asyntask">
+        <menu>
+            <item
+                android:id="@+id/exercise_1"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Número primo asyntask" />
+            <item
+                android:id="@+id/exercise_2"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Cancelar número primo asyntask" />
+            <item
+                android:id="@+id/exercise_3"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Cancelar in background número primo" />
+            <item
+                android:id="@+id/exercise_4"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Control estado Asyntask" />
+            <item
+                android:id="@+id/exercise_5"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Clase independiente Asyntask" />
+            <item
+                android:id="@+id/exercise_6"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Bloqueo cambio orientación" />
+            <item
+                android:id="@+id/exercise_7"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Guardar estado FragmentOculto" />
+            <item
+                android:id="@+id/exercise_8"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Completo guardar estado FragmentOculto" />
+            <item
+                android:id="@+id/exercise_9"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Utilizar barra de progreso" />
+            <item
+                android:id="@+id/exercise_10"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Intervalo número primo" />
+            <item
+                android:id="@+id/exercise_11"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Intervalo concurrent número primo" />
+        </menu>
+    </item>
+
+    <item android:title="Servicio">
+        <menu>
+            <item
+                android:id="@+id/exercise_21"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Servicio local enlazado" />
+            <item
+                android:id="@+id/exercise_22"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Utilizar un mensajero" />
+            <item
+                android:id="@+id/exercise_23"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Calcular SHA1" />
+            <item
+                android:id="@+id/exercise_24"
+                android:icon="@drawable/ic_menu_send"
+                android:title="SHA1 receptor intent" />
+        </menu>
+    </item>
+
+    <item android:title="SurfaceView">
+        <menu>
+            <item
+                android:id="@+id/exercise_31"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Animación SurfaceView" />
+            <item
+                android:id="@+id/exercise_32"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Pelota Evento pantalla táctil" />
+        </menu>
+    </item>
+
+</menu>
