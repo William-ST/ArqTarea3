@@ -25,11 +25,6 @@ public class MyAsyncTask extends AsyncTask<Long, Long, Void> {
             //final long number = endInterval-startInterval;
             if (isPrimeNumber(startInterval)) {
                 publishProgress(startInterval);
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
             }
             startInterval++;
         }

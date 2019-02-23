@@ -74,6 +74,10 @@
                 android:id="@+id/exercise_25"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Número primo service" />
+            <item
+                android:id="@+id/exercise_26"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Número primo intent" />
         </menu>
     </item>
 

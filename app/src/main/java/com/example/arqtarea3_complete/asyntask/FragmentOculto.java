@@ -15,25 +15,28 @@ public class FragmentOculto extends Fragment implements TaskListener {
     @Override
     public void onPreExecute() {
         Log.v(TAG,"Thread "+Thread.currentThread().getId()+": onPreExecute()");
-        taskListener.onPreExecute();
+        if (taskListener != null) taskListener.onPreExecute();
     }
 
     @Override
     public void onProgressUpdate(double progreso) {
         Log.v(TAG, "Thread " + Thread.currentThread().getId() +": onProgressUpdate()");
-        taskListener.onProgressUpdate(progreso);
+        if (taskListener == null)
+            Log.w(TAG, "Guardar el estado de ejecución crash protected!");
+        else
+            taskListener.onProgressUpdate(progreso);
     }
 
     @Override
     public void onPostExecute(boolean isPrime) {
         Log.v(TAG,"Thread"+Thread.currentThread().getId()+": onPostExecute()");
-        taskListener.onPostExecute(isPrime);
+        if (taskListener != null) taskListener.onPostExecute(isPrime);
     }
 
     @Override
     public void onCancelled() {
         Log.v(TAG,"Thread "+Thread.currentThread().getId() + ": onCancelled");
-        taskListener.onCancelled();
+        if (taskListener != null) taskListener.onCancelled();
     }
 
     static interface TaskListener {

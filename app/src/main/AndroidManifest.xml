@@ -61,7 +61,13 @@
             android:enabled="true"
             android:exported="true" />
 
+        <service
+            android:name=".servicio.extra2.PrimeNumberBroadcastService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity android:name=".servicio.extra1.Ext1MainActivity" />
+        <activity android:name=".servicio.extra2.Ext2MainActivity" />
 
         <activity android:name=".surfaceview.exercise1.Boucing1Activity" />
         <activity android:name=".surfaceview.exercise2.Boucing2Activity" />

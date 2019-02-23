@@ -31,6 +31,7 @@ import com.example.arqtarea3_complete.servicio.exercise2.Exe2MainActivity;
 import com.example.arqtarea3_complete.servicio.exercise3.Exe3MainActivity;
 import com.example.arqtarea3_complete.servicio.exercise4.Exe4MainActivity;
 import com.example.arqtarea3_complete.servicio.extra1.Ext1MainActivity;
+import com.example.arqtarea3_complete.servicio.extra2.Ext2MainActivity;
 import com.example.arqtarea3_complete.surfaceview.exercise1.Boucing1Activity;
 import com.example.arqtarea3_complete.surfaceview.exercise2.Boucing2Activity;
 
@@ -133,6 +134,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(this, Exe4MainActivity.class));
         } else if (id == R.id.exercise_25) {
             startActivity(new Intent(this, Ext1MainActivity.class));
+        } else if (id == R.id.exercise_26) {
+            startActivity(new Intent(this, Ext2MainActivity.class));
         } else if (id == R.id.exercise_31) {
             startActivity(new Intent(this, Boucing1Activity.class));
         } else if (id == R.id.exercise_32) {

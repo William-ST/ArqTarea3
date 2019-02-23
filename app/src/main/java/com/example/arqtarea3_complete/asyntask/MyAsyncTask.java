@@ -20,6 +20,7 @@ public class MyAsyncTask extends AsyncTask<Long, Double, Boolean> {
     protected Boolean doInBackground(Long... n) {
         Log.v(TAG, "Thread " + Thread.currentThread().getId() + ": Comienza doInBackground()");
         long numComprobar = n[0];
+        if (numComprobar == 2) return true;
         if (numComprobar < 2 || numComprobar % 2 == 0)
             return false;
         double limite = Math.sqrt(numComprobar) + 0.0001;

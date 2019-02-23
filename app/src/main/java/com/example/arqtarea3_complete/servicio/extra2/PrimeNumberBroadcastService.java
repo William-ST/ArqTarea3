@@ -1,4 +1,4 @@
-package com.example.arqtarea3_complete.servicio.extra1;
+package com.example.arqtarea3_complete.servicio.extra2;
 
 import android.app.Service;
 import android.content.Intent;
@@ -6,7 +6,10 @@ import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+
+import com.example.arqtarea3_complete.servicio.extra1.ResultCallback;
 
 import java.lang.ref.WeakReference;
 import java.util.concurrent.BlockingQueue;
@@ -20,14 +23,19 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Created by William_ST on 23/02/19.
  */
 
-public class PrimeNumberService extends Service {
+public class PrimeNumberBroadcastService extends Service {
+
+    public static final String PRIMENUMBER_BROADCAST = "PRIMENUMBER_BROADCAST";
+    public static final String RESULT = "sha1";
 
     private final IBinder mBinder = new LocalBinder();
     private final String TAG = "PrimeNumberService";
     private static final int CORE_POOL_SIZE = 2;
     private static final int MAXIMUM_POOL_SIZE = 4;
     private static final int MAX_QUEUE_SIZE = 16;
+
     private static final BlockingQueue<Runnable> sPoolWorkQueue = new LinkedBlockingQueue<Runnable>(MAX_QUEUE_SIZE);
+
     private static final ThreadFactory sThreadFactory = new ThreadFactory() {
         private final AtomicInteger mCount = new AtomicInteger(1);
 
@@ -41,8 +49,8 @@ public class PrimeNumberService extends Service {
     private ThreadPoolExecutor mExecutor;
 
     public class LocalBinder extends Binder {
-        PrimeNumberService getService() {
-            return PrimeNumberService.this;
+        PrimeNumberBroadcastService getService() {
+            return PrimeNumberBroadcastService.this;
         }
     }
 
@@ -51,24 +59,14 @@ public class PrimeNumberService extends Service {
         return mBinder;
     }
 
-    private void postResultOnUI(final boolean result,
-                                final WeakReference<ResultCallback<Boolean>> callback) {
-        Looper mainLooper = Looper.getMainLooper();
-        Handler handler = new Handler(mainLooper);
-        handler.post(new Runnable() {
-
-            @Override
-            public void run() {
-                if (callback.get() != null) {
-                    callback.get().onResult(result);
-                }
-            }
-        });
+    private void broadcastResult(Boolean result) {
+        Intent intent = new Intent(PRIMENUMBER_BROADCAST);
+        intent.putExtra(RESULT, result);
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 
-    void processPrimeNumber(final long number, ResultCallback<Boolean> callback) {
-        final WeakReference<ResultCallback<Boolean>> ref =
-                new WeakReference<ResultCallback<Boolean>>(callback);
+    void processPrimeNumber(final long number) {
+
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -77,9 +75,9 @@ public class PrimeNumberService extends Service {
                 try {
                     // Execute the Long Running Computation
                     final boolean result = isPrimeNumber(number);
-                    Log.i(TAG, "¿"+number+" is prime number? : "+ result);
+                    Log.i(TAG, "¿" + number + " is prime number? : " + result);
                     // Execute the Runnable on UI Thread
-                    postResultOnUI(result, ref);
+                    broadcastResult(result);
                 } catch (Exception e) {
                     Log.e(TAG, "Calculating failed", e);
                 }
